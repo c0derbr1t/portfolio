@@ -236,6 +236,11 @@
 		max-width: 100%;
 		width: 1400px;
 
+		& h4 {
+			padding: 0% 0 6%;
+			font-size: 1.5rem;
+		}
+
 		@include breakpoint('wide') {
 			width: 1200px;
 		}
@@ -329,7 +334,9 @@
 		&.featured {
 			display: block;
 			width: 100%;
-			margin: 0 0 2em 0;
+			margin: 0;
+			cursor: default;
+			padding: 0 0 6%;
 		}
 
 		&.left {
@@ -372,6 +379,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0 auto;
+		padding: 0 2% 0 0;
+		text-align: center;
 
 		ul {
 			width: 30%;
@@ -721,6 +730,37 @@
 					}
 				}
 			}
+
+			.static {
+				padding-left: 0;
+
+				a {
+					display: block;
+					padding: 0.5em 1.5em 0.5em 1.5em;
+					background: rgba(0, 0, 0, 0.15);
+					box-shadow: inset 0 0 0.25em 0 rgba(0, 0, 0, 0.125);
+					color: #fff;
+					text-decoration: none;
+					outline: 0;
+					border: 0;
+					@include vendor('transition', 'none');
+
+					span {
+						position: relative;
+						display: block;
+						font-size: 0.8em;						
+
+						&:before {
+							position: absolute;
+							left: 0;
+							color: #e27689;
+							text-align: center;
+							width: 1.25em;
+							line-height: 1.75em;
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -811,6 +851,27 @@
 
 			&.four {
 				background-color: #e8edec;
+			}
+		}
+	}
+
+	#skills-page {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: stretch;
+
+		& header {
+
+			& h1 {
+				font-size: 4rem;
+				text-align: center;
+				font-weight: bolder;
+			}
+
+			& h4 {
+				padding: 1% 0;
+
 			}
 		}
 	}
