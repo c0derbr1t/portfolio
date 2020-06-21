@@ -1,3 +1,13 @@
+## Portfolio: Brittani Luce
+
+Please call me Britt! 
+
+I created this portfolio using a template from HTML5. I created content and adjusted styles to fit my vision of it.
+
+
+
+
+
 Prologue by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
