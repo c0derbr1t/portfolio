@@ -1372,13 +1372,15 @@ article > .container, article:last-child {
   width: 100%;
 }
 .image.avatar48 {
-  width: 48px;
-  height: 48px;
+  width: 75px;
+  height: 75px;
   background: #f00;
+  margin: 0 10px;
 }
 .image.avatar48 img {
-  width: 48px;
-  height: 48px;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
 }
 .image.fit {
   display: block;
@@ -1402,6 +1404,21 @@ article > .container, article:last-child {
 .image.centered img {
   margin: 0 auto;
   width: auto;
+}
+.image.screen-shot {
+  display: block;
+  margin: 0 auto;
+  width: 75%;
+}
+.image.screen-shot-sm {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.image.screen-shot-lg {
+  display: block;
+  margin: 0 auto;
+  width: 40%;
 }
 
 /* List */
@@ -1561,11 +1578,11 @@ button,
   position: relative;
   display: inline-block;
   border-radius: 0.35em;
-  color: #fff !important;
+  color: #f0fffe !important;
   text-decoration: none;
   padding: 0.75em 2.5em 0.75em 2.5em;
-  background-color: #8ebebc;
-  border: 0;
+  background-color: #332e52;
+  border: 5px outset #958fb8 !important;
   cursor: pointer;
   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("images/overlay.png");
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("images/overlay.png");
@@ -1581,18 +1598,29 @@ input[type=submit]:hover,
 input[type=reset]:hover,
 button:hover,
 .button:hover {
-  background-color: #9ececc;
+  background-color: #bd6273;
+  border: 5px outset #c9939d !important;
 }
 input[type=button]:active,
 input[type=submit]:active,
 input[type=reset]:active,
 button:active,
 .button:active {
-  background-color: #7eaeac;
+  background-color: black;
 }
 
 .resume {
   padding: 0.25em, 1.25em;
+}
+
+.disabled {
+  padding: 0.25em, 1.25em;
+  background-color: #4c4a57;
+}
+.disabled:hover {
+  background-color: #4c4a57;
+  border: 5px outset #958fb8 !important;
+  cursor: default;
 }
 
 /* Item */
@@ -1603,12 +1631,17 @@ button:active,
   background: #e1f0f0;
   border: 4px outset #b7dfdf;
   border-radius: 15px;
+  color: red;
+}
+.item img {
+  border-radius: 3px;
 }
 .item header {
   background: #fff;
   margin: 0;
   padding: 1em 2em 1em 0.5em;
   font-size: 0.8em;
+  border-radius: 3px;
 }
 .item header h3 {
   font-size: 1em;
@@ -1779,15 +1812,10 @@ button:active,
 #nav ul li a.active span:before {
   color: #e27689;
 }
-#nav ul .static {
-  padding-left: 0;
-}
-#nav ul .static a {
+#nav ul li .static {
   display: block;
   padding: 0.5em 1.5em 0.5em 1.5em;
-  background: rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 0 0.25em 0 rgba(0, 0, 0, 0.125);
-  color: #fff;
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   outline: 0;
   border: 0;
@@ -1796,18 +1824,31 @@ button:active,
   -ms-transition: none;
   transition: none;
 }
-#nav ul .static a span {
+#nav ul li .static span {
   position: relative;
   display: block;
   font-size: 0.8em;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 0.25em 0 rgba(0, 0, 0, 0.125);
+  color: #fff;
 }
-#nav ul .static a span:before {
+#nav ul li .static span:before {
   position: absolute;
   left: 0;
   color: #e27689;
   text-align: center;
   width: 1.25em;
   line-height: 1.75em;
+}
+#nav ul .project-page {
+  margin: -6% 10% 0 0;
+  font-size: 0.85rem;
+}
+#nav ul .project-page span {
+  color: #e0cace;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 1% 5% 5%;
+  font-style: italic;
 }
 
 /* Footer */
@@ -1822,12 +1863,20 @@ button:active,
 #footer .copyright {
   cursor: default;
   margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#footer .copyright div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 #footer .copyright li {
   display: inline-block;
   line-height: 1em;
-  border-left: solid 1px rgba(128, 128, 128, 0.35);
-  padding: 0 0 0 0.5em;
+  padding: 5px 0 5px 0.5em;
   margin: 0 0 0 0.5em;
 }
 #footer .copyright li:first-child {
@@ -1835,7 +1884,6 @@ button:active,
   padding-left: 0;
   margin-left: 0;
 }
-
 /* Main */
 #main {
   margin-left: 375px;
@@ -1996,6 +2044,19 @@ button:active,
     padding-right: 2.25em;
   }
   #nav ul li a span:before {
+    left: 100%;
+    margin-left: -1.25em;
+    line-height: 2.25em;
+  }
+  #nav ul li .static {
+    font-size: 0.8em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  #nav ul li .static span {
+    padding-right: 2.25em;
+  }
+  #nav ul li .static span:before {
     left: 100%;
     margin-left: -1.25em;
     line-height: 2.25em;

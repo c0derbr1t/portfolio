@@ -1601,15 +1601,30 @@ button:active,
   margin-bottom: 40px;
   padding: 0.5em;
   background: #e1f0f0;
+  border: 4px outset #b7dfdf;
+  border-radius: 15px;
+  color: red;
+}
+.item img {
+  border-radius: 3px;
 }
 .item header {
   background: #fff;
   margin: 0;
   padding: 1em 2em 1em 0.5em;
   font-size: 0.8em;
+  border-radius: 5px;
 }
 .item header h3 {
   font-size: 1em;
+}
+
+.item-special {
+  border: 4px outset #E27689;
+}
+
+.item-link {
+  margin-bottom: 7.5%;
 }
 
 /* Icons */
@@ -1863,7 +1878,7 @@ button:active,
 }
 #main > section.one {
   background-color: #81918E;
-  background-image: url("../../images/banner.jpg");
+  background-image: url("../../images/night-sky.jpg");
 }
 #main > section.two {
   background-color: #f5fafa;
@@ -1907,11 +1922,17 @@ button:active,
 
 .project-card-h3 {
   font-size: 6rem;
+  font-weight: bold;
 }
 
 .project-card-h5 {
   font-size: 1rem;
+}
+
+.test123 {
   color: green;
+  background-color: orangered;
+  border: 5px solid blue;
 }
 
 /* Wide */
